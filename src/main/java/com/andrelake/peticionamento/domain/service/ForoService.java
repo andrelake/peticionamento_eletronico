@@ -26,6 +26,12 @@ public class ForoService {
 		return foro;
 	}
 	
+	public Foro save(Foro foro) {
+		
+		return repo.save(foro);
+	}
+	
+	
 	public Foro findOrFail(Long id) {
 		
 		Foro foro = repo.findById(id)
