@@ -3,8 +3,10 @@ package com.andrelake.peticionamento.domain.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import com.andrelake.peticionamento.domain.exception.ForoEmUsoException;
 import com.andrelake.peticionamento.domain.exception.ForoNaoEncontradoException;
 import com.andrelake.peticionamento.domain.model.Foro;
 import com.andrelake.peticionamento.domain.repository.ForoRepository;
@@ -31,6 +33,16 @@ public class ForoService {
 		return repo.save(foro);
 	}
 	
+	public void deleteById(Long id) {
+		
+		findOrFail(id);
+		try {
+			repo.deleteById(id);
+		}	
+		catch(DataIntegrityViolationException e) {
+			throw new ForoEmUsoException(id);
+		}
+	}
 	
 	public Foro findOrFail(Long id) {
 		
