@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.andrelake.peticionamento.domain.model.Foro;
@@ -62,5 +63,12 @@ public class ForoController {
 		
 		service.deleteById(id);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@GetMapping("/nomesearch")
+	public ResponseEntity<List<Foro>> findByNome(@RequestParam String text) {
+		
+		List<Foro> list = service.findByNome(text);
+		return ResponseEntity.ok(list);
 	}
 }

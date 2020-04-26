@@ -44,6 +44,13 @@ public class ForoService {
 		}
 	}
 	
+	public List<Foro> findByNome(String text) {
+		
+		List<Foro> foros = repo.findByNomeContainingIgnoreCase(text);
+		
+		return foros;
+	}
+	
 	public Foro findOrFail(Long id) {
 		
 		Foro foro = repo.findById(id)

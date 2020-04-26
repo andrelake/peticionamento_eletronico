@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -25,6 +27,7 @@ public class Foro {
 	private Long id;
 	private String nome;
 	
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "foro_competencias",
 			joinColumns = @JoinColumn(name = "foro_id"),
