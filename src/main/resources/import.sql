@@ -1,0 +1,1 @@
+insert into foro (nome) value ('Fórum Ourinhos'), ('Fórum Chavantes');
