@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,6 +25,7 @@ public class Competencia {
 	private Long id;
 	private String nome;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "competencia")
 	private List<ClasseProcesso> classes = new ArrayList<>();
 }
