@@ -18,3 +18,5 @@ insert into participacao (nome) value ('Confrontante'), ('Requerente'), ('Requer
 insert into estado_civil (nome) value ('Solteiro'), ('Casado'), ('Separado judicialmente'), ('Divorciado'), ('Viúvo'), ('Companheiro'), ('Não identificado');
 
 insert into profissao (nome) value ('Administrador'), ('Pedreiro'), ('Programador');
+
+insert into nacionalidade (nome) value ('Alemão'), ('Brasileiro'), ('Canadense');
