@@ -16,3 +16,5 @@ insert into peticao_inicial_primeiro_grau (valor, assunto_id) values (10000, 1),
 insert into participacao (nome) value ('Confrontante'), ('Requerente'), ('Requerido'), ('Advogado');
 
 insert into estado_civil (nome) value ('Solteiro'), ('Casado'), ('Separado judicialmente'), ('Divorciado'), ('Viúvo'), ('Companheiro'), ('Não identificado');
+
+insert into profissao (nome) value ('Administrador'), ('Pedreiro'), ('Programador');
