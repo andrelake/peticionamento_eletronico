@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.api.controller;
+package com.andrelake.peticionamento.api.controller.peticao;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.andrelake.peticionamento.domain.model.Foro;
-import com.andrelake.peticionamento.domain.service.ForoService;
+import com.andrelake.peticionamento.domain.model.peticao.Foro;
+import com.andrelake.peticionamento.domain.service.peticao.ForoService;
 
 @RestController
 @RequestMapping("/foros")

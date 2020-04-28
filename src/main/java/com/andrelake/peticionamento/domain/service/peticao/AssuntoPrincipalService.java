@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.domain.service;
+package com.andrelake.peticionamento.domain.service.peticao;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.andrelake.peticionamento.domain.exception.AssuntoPrincipalEmUsoException;
 import com.andrelake.peticionamento.domain.exception.AssuntoPrincipalNaoEncontradoException;
-import com.andrelake.peticionamento.domain.model.AssuntoPrincipal;
-import com.andrelake.peticionamento.domain.model.ClasseProcesso;
-import com.andrelake.peticionamento.domain.repository.AssuntoPrincipalRepository;
+import com.andrelake.peticionamento.domain.model.peticao.AssuntoPrincipal;
+import com.andrelake.peticionamento.domain.model.peticao.ClasseProcesso;
+import com.andrelake.peticionamento.domain.repository.peticao.AssuntoPrincipalRepository;
 
 @Service
 public class AssuntoPrincipalService {

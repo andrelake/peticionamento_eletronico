@@ -9,3 +9,8 @@ insert into classe_processo (nome, competencia_id) values ('Usucapião', 1), ('E
 insert into assunto_principal (nome, classe_id) values ('Usucapião Ordinária', 1), ('Usucapião Extraordinária', 1), ('Homicídio Doloso', 3);
 
 insert into peticao_inicial_primeiro_grau (valor, assunto_id) values (10000, 1), (50000, 3);
+
+
+
+
+insert into participacao (nome) value ('Confrontante'), ('Requerente'), ('Requerido'), ('Advogado');

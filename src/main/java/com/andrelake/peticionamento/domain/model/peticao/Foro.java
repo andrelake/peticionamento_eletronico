@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.domain.model;
+package com.andrelake.peticionamento.domain.model.peticao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Competencia {
+public class Foro {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +28,9 @@ public class Competencia {
 	private String nome;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "competencia")
-	private List<ClasseProcesso> classes = new ArrayList<>();
+	@ManyToMany
+	@JoinTable(name = "foro_competencias",
+			joinColumns = @JoinColumn(name = "foro_id"),
+			inverseJoinColumns = @JoinColumn(name = "competencia_id"))
+	private List<Competencia> competencias = new ArrayList<>();
 }

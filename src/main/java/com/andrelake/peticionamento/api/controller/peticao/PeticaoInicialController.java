@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.api.controller;
+package com.andrelake.peticionamento.api.controller.peticao;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.andrelake.peticionamento.domain.model.PeticaoInicialPrimeiroGrau;
-import com.andrelake.peticionamento.domain.service.PeticaoInicialService;
+import com.andrelake.peticionamento.domain.model.peticao.PeticaoInicialPrimeiroGrau;
+import com.andrelake.peticionamento.domain.service.peticao.PeticaoInicialService;
 
 @RestController
 @RequestMapping("/petiniciais")

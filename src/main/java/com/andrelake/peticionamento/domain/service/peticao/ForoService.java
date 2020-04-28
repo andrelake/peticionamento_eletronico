@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.domain.service;
+package com.andrelake.peticionamento.domain.service.peticao;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.andrelake.peticionamento.domain.exception.ForoEmUsoException;
 import com.andrelake.peticionamento.domain.exception.ForoNaoEncontradoException;
-import com.andrelake.peticionamento.domain.model.Foro;
-import com.andrelake.peticionamento.domain.repository.ForoRepository;
+import com.andrelake.peticionamento.domain.model.peticao.Foro;
+import com.andrelake.peticionamento.domain.repository.peticao.ForoRepository;
 
 @Service
 public class ForoService {

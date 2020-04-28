@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.domain.service;
+package com.andrelake.peticionamento.domain.service.peticao;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.andrelake.peticionamento.domain.exception.CompetenciaEmUsoException;
 import com.andrelake.peticionamento.domain.exception.CompetenciaNaoEncontradaException;
-import com.andrelake.peticionamento.domain.model.Competencia;
-import com.andrelake.peticionamento.domain.repository.CompetenciaRepository;
+import com.andrelake.peticionamento.domain.model.peticao.Competencia;
+import com.andrelake.peticionamento.domain.repository.peticao.CompetenciaRepository;
 
 @Service
 public class CompetenciaService {

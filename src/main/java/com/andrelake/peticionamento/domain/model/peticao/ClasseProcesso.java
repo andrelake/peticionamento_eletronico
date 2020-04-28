@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.domain.model;
+package com.andrelake.peticionamento.domain.model.peticao;
 
 import java.util.ArrayList;
 import java.util.List;

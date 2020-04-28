@@ -1,4 +1,4 @@
-package com.andrelake.peticionamento.domain.model;
+package com.andrelake.peticionamento.domain.model.peticao;
 
 import java.math.BigDecimal;
 
