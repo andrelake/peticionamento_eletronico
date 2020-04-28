@@ -20,3 +20,6 @@ insert into estado_civil (nome) value ('Solteiro'), ('Casado'), ('Separado judic
 insert into profissao (nome) value ('Administrador'), ('Pedreiro'), ('Programador');
 
 insert into nacionalidade (nome) value ('Alemão'), ('Brasileiro'), ('Canadense');
+
+insert into parte (cep, complemento, cpf, genero, nome, numero_local, orgao_emissor, pessoa, rg, estado_civil_id, nacionalidade_id, participacao_id, profissao_id) values ('19900-000', 'Casa', '999.999.999-99', 'M', 'Carlos Silva', '203', 'SSP/SP', 'F', '33.333.333-3', 1, 2, 1, 1);
+insert into parte (cep, complemento, cpf, genero, nome, numero_local, orgao_emissor, pessoa, rg, estado_civil_id, nacionalidade_id, participacao_id, profissao_id) values ('19900-000', 'Apartamento', '888.888.888-88', 'F', 'Maria Oliveira', '55', 'SSP/SP', 'F', '11.111.111-1', 2, 2, 3, 3);
