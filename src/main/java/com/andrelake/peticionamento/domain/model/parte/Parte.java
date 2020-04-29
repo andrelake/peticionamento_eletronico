@@ -36,4 +36,7 @@ public class Parte {
 	private Nacionalidade nacionalidade;
 	@ManyToOne
 	private Profissao profissao;
+	
+	@ManyToOne
+	private Partes partesss;
 }
