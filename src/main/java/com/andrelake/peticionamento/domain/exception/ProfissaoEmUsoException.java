@@ -9,6 +9,6 @@ public class ProfissaoEmUsoException extends EntidadeEmUsoException{
 	}
 	
 	public ProfissaoEmUsoException(Long id) {
-		this(String.format("Participação com id %d não pode ser removida, pois está em uso", id));
+		this(String.format("Profissão com id %d não pode ser removida, pois está em uso", id));
 	}
 }

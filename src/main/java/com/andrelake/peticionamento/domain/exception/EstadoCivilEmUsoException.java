@@ -9,6 +9,6 @@ public class EstadoCivilEmUsoException extends EntidadeEmUsoException{
 	}
 	
 	public EstadoCivilEmUsoException(Long id) {
-		this(String.format("Participação com id %d não pode ser removida, pois está em uso", id));
+		this(String.format("Estado civil com id %d não pode ser removido, pois está em uso", id));
 	}
 }

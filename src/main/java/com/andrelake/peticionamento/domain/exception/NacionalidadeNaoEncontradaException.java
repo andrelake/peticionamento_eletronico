@@ -9,6 +9,6 @@ public class NacionalidadeNaoEncontradaException extends EntidadeNaoEncontradaEx
 	}
 	
 	public NacionalidadeNaoEncontradaException(Long id) {
-		this(String.format("Participação com id %d não foi encontrada", id));
+		this(String.format("Nacionalidade com id %d não foi encontrada", id));
 	}
 }

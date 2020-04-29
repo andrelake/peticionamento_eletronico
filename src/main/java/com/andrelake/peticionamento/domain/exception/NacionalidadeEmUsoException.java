@@ -9,6 +9,6 @@ public class NacionalidadeEmUsoException extends EntidadeEmUsoException{
 	}
 	
 	public NacionalidadeEmUsoException(Long id) {
-		this(String.format("Participação com id %d não pode ser removida, pois está em uso", id));
+		this(String.format("Nacionalidade com id %d não pode ser removida, pois está em uso", id));
 	}
 }

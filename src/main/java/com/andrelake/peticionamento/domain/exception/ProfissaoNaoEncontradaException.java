@@ -9,6 +9,6 @@ public class ProfissaoNaoEncontradaException extends EntidadeNaoEncontradaExcept
 	}
 	
 	public ProfissaoNaoEncontradaException(Long id) {
-		this(String.format("Participação com id %d não foi encontrada", id));
+		this(String.format("Profissão com id %d não foi encontrada", id));
 	}
 }

@@ -9,6 +9,6 @@ public class EstadoCivilNaoEncontradoException extends EntidadeNaoEncontradaExce
 	}
 	
 	public EstadoCivilNaoEncontradoException(Long id) {
-		this(String.format("Participação com id %d não foi encontrada", id));
+		this(String.format("Estado civil com id %d não foi encontrado", id));
 	}
 }
