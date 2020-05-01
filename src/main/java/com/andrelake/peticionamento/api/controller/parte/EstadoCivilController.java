@@ -34,7 +34,7 @@ public class EstadoCivilController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<EstadoCivil> findById(@PathVariable Long id) {
-		
+
 		EstadoCivil estadoCivil = service.findById(id);
 		return ResponseEntity.ok(estadoCivil);
 	}
