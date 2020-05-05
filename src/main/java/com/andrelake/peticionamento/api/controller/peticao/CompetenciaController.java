@@ -2,6 +2,8 @@ package com.andrelake.peticionamento.api.controller.peticao;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,14 +42,14 @@ public class CompetenciaController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Competencia> insert(@RequestBody Competencia competencia) {
+	public ResponseEntity<Competencia> insert(@RequestBody @Valid Competencia competencia) {
 		
 		competencia = service.save(competencia);
 		return ResponseEntity.status(HttpStatus.CREATED).body(competencia);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Competencia> update(@PathVariable Long id, @RequestBody Competencia competencia) {
+	public ResponseEntity<Competencia> update(@PathVariable Long id, @RequestBody @Valid Competencia competencia) {
 		
 		Competencia comp = service.findById(id);
 		
