@@ -2,6 +2,8 @@ package com.andrelake.peticionamento.api.controller.peticao;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,7 +43,7 @@ public class AssuntoPrincipalController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<AssuntoPrincipal> insert(@RequestBody AssuntoPrincipal assunto) {
+	public ResponseEntity<AssuntoPrincipal> insert(@RequestBody @Valid AssuntoPrincipal assunto) {
 		
 		assunto = assuntoService.save(assunto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(assunto);

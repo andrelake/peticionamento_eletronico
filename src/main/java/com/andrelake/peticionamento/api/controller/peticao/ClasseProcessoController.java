@@ -50,7 +50,7 @@ public class ClasseProcessoController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<ClasseProcesso> update(@PathVariable Long id, @RequestBody ClasseProcesso classe) {
+	public ResponseEntity<ClasseProcesso> update(@PathVariable Long id, @RequestBody @Valid ClasseProcesso classe) {
 		
 		ClasseProcesso oldClass = classeService.findById(id);
 		
