@@ -11,7 +11,8 @@ public enum ProblemType {
 	PROPRIEDADE_INEXISTENTE("/propriedade-inexistente", "Propriedade inexistente"),
 	PROPRIEDADE_IGNORADA("/propriedade-ignorada", "Propriedade ignorada"),
 	URL_INVALIDA("/url-invalida", "URL inválida"),
-	ERRO_DE_SISTEMA("/erro-de-sistema", "Erro de sistema");
+	ERRO_DE_SISTEMA("/erro-de-sistema", "Erro de sistema"),
+	DADOS_INVALIDOS("/dados-invalidos", "Dados inválidos");
 	
 	private String title;
 	private String uri;

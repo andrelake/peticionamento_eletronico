@@ -2,6 +2,8 @@ package com.andrelake.peticionamento.api.controller.peticao;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,14 +43,14 @@ public class ForoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Foro> insert(@RequestBody Foro foro) {
+	public ResponseEntity<Foro> insert(@RequestBody @Valid Foro foro) {
 		
 		foro = service.save(foro);
 		return ResponseEntity.status(HttpStatus.CREATED).body(foro);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Foro> update(@PathVariable Long id, @RequestBody Foro foro) {
+	public ResponseEntity<Foro> update(@PathVariable Long id, @RequestBody @Valid Foro foro) {
 		
 		Foro foroRoot = service.findById(id);
 		
