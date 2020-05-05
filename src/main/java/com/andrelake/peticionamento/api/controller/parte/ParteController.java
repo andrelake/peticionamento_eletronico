@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.util.ReflectionUtils;
+import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.SmartValidator;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -23,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.andrelake.peticionamento.core.validation.ValidacaoException;
 import com.andrelake.peticionamento.domain.model.parte.Parte;
 import com.andrelake.peticionamento.domain.service.parte.ParteService;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -34,6 +38,9 @@ public class ParteController {
 
 	@Autowired
 	private ParteService parteService;
+	
+	@Autowired
+	private SmartValidator validator;
 	
 	@GetMapping
 	public ResponseEntity<List<Parte>> findAll() {
@@ -50,14 +57,14 @@ public class ParteController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Parte> insert(@RequestBody Parte parte) {
+	public ResponseEntity<Parte> insert(@RequestBody @Valid Parte parte) {
 		
 		parte = parteService.save(parte);
 		return ResponseEntity.status(HttpStatus.CREATED).body(parte);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Parte> update(@PathVariable Long id, @RequestBody Parte parte) {
+	public ResponseEntity<Parte> update(@PathVariable Long id, @RequestBody @Valid Parte parte) {
 		
 		Parte oldParte = parteService.findById(id);
 		
@@ -74,8 +81,19 @@ public class ParteController {
 		Parte parteAtual = parteService.findById(id);
 		
 		merge(campos, parteAtual, request);
+		validate(parteAtual, "parte");
 		
 		return update(id, parteAtual);
+	}
+
+	private void validate(Parte parte, String objectName) {
+		
+		BeanPropertyBindingResult bindingResult = new BeanPropertyBindingResult(parte, objectName);
+		validator.validate(parte, bindingResult);
+		
+		if(bindingResult.hasErrors()) {
+			throw new ValidacaoException(bindingResult);
+		}
 	}
 
 	@DeleteMapping("/{id}")

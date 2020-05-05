@@ -7,4 +7,6 @@ public interface Groups {
 	public interface ClasseProcessoId{}
 	
 	public interface AssuntoPrincipalId{}
+	
+	public interface ParticipacaoId{}
 }
