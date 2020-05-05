@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.groups.ConvertGroup;
 import javax.validation.groups.Default;
 
+import com.andrelake.peticionamento.core.validation.Groups.AssuntoPrincipalId;
 import com.andrelake.peticionamento.core.validation.Groups.ClasseProcessoId;
 
 import lombok.Data;
@@ -21,6 +22,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 public class AssuntoPrincipal {
 
+	@NotNull(groups = AssuntoPrincipalId.class)
 	@Id
 	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

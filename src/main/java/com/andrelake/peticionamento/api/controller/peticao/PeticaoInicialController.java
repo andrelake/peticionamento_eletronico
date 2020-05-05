@@ -2,6 +2,8 @@ package com.andrelake.peticionamento.api.controller.peticao;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,14 +42,14 @@ public class PeticaoInicialController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<PeticaoInicialPrimeiroGrau> insert(@RequestBody PeticaoInicialPrimeiroGrau peticao) {
+	public ResponseEntity<PeticaoInicialPrimeiroGrau> insert(@RequestBody @Valid PeticaoInicialPrimeiroGrau peticao) {
 		
 		peticao = petService.save(peticao);
 		return ResponseEntity.status(HttpStatus.CREATED).body(peticao);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<PeticaoInicialPrimeiroGrau> update(@PathVariable Long id, @RequestBody PeticaoInicialPrimeiroGrau peticao) {
+	public ResponseEntity<PeticaoInicialPrimeiroGrau> update(@PathVariable Long id, @RequestBody @Valid PeticaoInicialPrimeiroGrau peticao) {
 		
 		PeticaoInicialPrimeiroGrau oldPet = petService.findById(id);
 		

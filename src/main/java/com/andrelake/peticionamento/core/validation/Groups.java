@@ -5,4 +5,6 @@ public interface Groups {
 	public interface CompetenciaId{}
 	
 	public interface ClasseProcessoId{}
+	
+	public interface AssuntoPrincipalId{}
 }
