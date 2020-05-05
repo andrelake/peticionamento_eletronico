@@ -50,7 +50,7 @@ public class AssuntoPrincipalController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<AssuntoPrincipal> update(@PathVariable Long id, @RequestBody AssuntoPrincipal assunto) {
+	public ResponseEntity<AssuntoPrincipal> update(@PathVariable Long id, @RequestBody @Valid AssuntoPrincipal assunto) {
 		
 		AssuntoPrincipal oldAssunto = assuntoService.findById(id);
 		
