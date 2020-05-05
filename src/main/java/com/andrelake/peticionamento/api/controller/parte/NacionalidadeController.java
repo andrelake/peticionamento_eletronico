@@ -2,6 +2,8 @@ package com.andrelake.peticionamento.api.controller.parte;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,14 +43,14 @@ public class NacionalidadeController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Nacionalidade> insert(@RequestBody Nacionalidade nacionalidade) {
+	public ResponseEntity<Nacionalidade> insert(@RequestBody @Valid Nacionalidade nacionalidade) {
 		
 		nacionalidade = service.save(nacionalidade);
 		return ResponseEntity.status(HttpStatus.CREATED).body(nacionalidade);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Nacionalidade> update(@PathVariable Long id, @RequestBody Nacionalidade nacionalidade) {
+	public ResponseEntity<Nacionalidade> update(@PathVariable Long id, @RequestBody @Valid Nacionalidade nacionalidade) {
 		
 		Nacionalidade nacionalidadeRoot = service.findById(id);
 		
