@@ -2,6 +2,8 @@ package com.andrelake.peticionamento.api.controller.peticao;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,7 +43,7 @@ public class ClasseProcessoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ClasseProcesso> insert(@RequestBody ClasseProcesso classe) {
+	public ResponseEntity<ClasseProcesso> insert(@RequestBody @Valid ClasseProcesso classe) {
 		
 		classe = classeService.save(classe);
 		return ResponseEntity.status(HttpStatus.CREATED).body(classe);

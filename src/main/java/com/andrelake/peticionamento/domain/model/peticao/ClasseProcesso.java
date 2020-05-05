@@ -9,7 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.groups.ConvertGroup;
+import javax.validation.groups.Default;
 
+import com.andrelake.peticionamento.core.validation.Groups.CompetenciaId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
@@ -24,8 +30,13 @@ public class ClasseProcesso {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	private Long id;
+	
+	@NotBlank
 	private String nome;
 	
+	@Valid
+	@ConvertGroup(from = Default.class, to = CompetenciaId.class)
+	@NotNull
 	@ManyToOne
 	private Competencia competencia;
 	
