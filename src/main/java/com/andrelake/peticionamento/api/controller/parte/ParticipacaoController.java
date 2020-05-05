@@ -2,6 +2,8 @@ package com.andrelake.peticionamento.api.controller.parte;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,14 +42,14 @@ public class ParticipacaoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Participacao> insert(@RequestBody Participacao participacao) {
+	public ResponseEntity<Participacao> insert(@RequestBody @Valid Participacao participacao) {
 		
 		participacao = service.save(participacao);
 		return ResponseEntity.status(HttpStatus.CREATED).body(participacao);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Participacao> update(@PathVariable Long id, @RequestBody Participacao participacao) {
+	public ResponseEntity<Participacao> update(@PathVariable Long id, @RequestBody @Valid Participacao participacao) {
 		
 		Participacao participacaoRoot = service.findById(id);
 		
